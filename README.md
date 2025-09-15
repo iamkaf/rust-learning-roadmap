@@ -180,7 +180,7 @@ Each workspace member has curated dependencies for its project types:
 *Getting familiar with Rust syntax and basic concepts*
 
 - [x] 1. 👋 **Hello World** - Print "Hello, World!" to console
-- [ ] 2. 🤝 **Personal Greeting** - Accept user input and greet them by name
+- [x] 2. 🤝 **Personal Greeting** - Accept user input and greet them by name
 - [ ] 3. 🧮 **Simple Calculator** - Add, subtract, multiply, divide two numbers
 - [x] 4. 🎲 **Number Guessing Game** - Generate random number, let user guess using `rand`
 - [ ] 5. 🌡️ **Temperature Converter** - Convert between Celsius and Fahrenheit
