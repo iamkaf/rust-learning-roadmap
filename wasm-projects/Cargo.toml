@@ -1,0 +1,14 @@
+[package]
+name = "wasm-projects"
+version.workspace = true
+edition.workspace = true
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+# Dependencies will be uncommented as projects are implemented
+# wasm-bindgen = "0.2"
+# web-sys = "0.3"
+# js-sys = "0.3"
+# console_error_panic_hook = "0.1"

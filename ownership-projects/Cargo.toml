@@ -1,0 +1,8 @@
+[package]
+name = "ownership-projects"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+# Dependencies will be uncommented as projects are implemented
+# regex = "1.10"

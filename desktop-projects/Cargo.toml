@@ -1,0 +1,10 @@
+[package]
+name = "desktop-projects"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+# Dependencies will be uncommented as projects are implemented
+# iced = "0.12"
+# egui = "0.28"
+# ratatui = "0.26"

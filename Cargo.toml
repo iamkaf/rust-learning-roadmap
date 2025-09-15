@@ -1,7 +1,15 @@
-[package]
-name = "rusted-kaf"
+[workspace]
+resolver = "2"
+members = [
+    "basic-projects",
+    "ownership-projects",
+    "web-projects",
+    "game-projects",
+    "desktop-projects",
+    "wasm-projects",
+    "advanced-projects"
+]
+
+[workspace.package]
 version = "0.1.0"
 edition = "2024"
-
-[dependencies]
-rand = "0.8.5"

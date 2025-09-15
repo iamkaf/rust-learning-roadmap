@@ -37,6 +37,145 @@ Systems programming, concurrency, async, graphics, and masterpiece projects
 
 ---
 
+## 🏗️ Workspace Structure & Usage Guide
+
+This repository is organized as a **Cargo workspace** to accommodate the diverse project types and dependencies across all 150 projects. Each category has its own workspace member with appropriate dependencies.
+
+### 📁 **Project Organization**
+
+```
+rust-learning-roadmap/
+├── Cargo.toml                    # Workspace root
+├── README.md
+├── basic-projects/               # Projects 1-30 (Beginner)
+│   ├── Cargo.toml               # Dependencies: rand, chrono, etc.
+│   └── src/bin/                 # Individual project files
+├── ownership-projects/           # Projects 31-45 (Ownership & Borrowing)
+│   ├── Cargo.toml               # Dependencies: regex
+│   └── src/bin/
+├── web-projects/                # Web & Async Projects
+│   ├── Cargo.toml               # Dependencies: tokio, axum, reqwest
+│   └── src/bin/
+├── game-projects/               # Game Development Projects
+│   ├── Cargo.toml               # Dependencies: bevy, macroquad, rand
+│   └── src/bin/
+├── desktop-projects/            # GUI & Desktop Applications
+│   ├── Cargo.toml               # Dependencies: iced, egui, ratatui
+│   └── src/bin/
+├── wasm-projects/               # WebAssembly Projects
+│   ├── Cargo.toml               # Dependencies: wasm-bindgen, web-sys
+│   └── src/lib.rs               # WebAssembly library
+└── advanced-projects/           # Complex Systems (Projects 101-150)
+    ├── Cargo.toml               # Dependencies: tokio, serde, anyhow
+    └── src/bin/
+```
+
+### 🚀 **Getting Started**
+
+1. **Clone and explore the workspace:**
+   ```bash
+   git clone <repository-url>
+   cd rust-learning-roadmap
+
+   # Build entire workspace
+   cargo build
+
+   # Check workspace status
+   cargo check
+   ```
+
+2. **Run existing projects:**
+   ```bash
+   # Project 1: Hello World
+   cargo run --bin 01_hello_world -p basic-projects
+
+   # Project 4: Number Guessing Game
+   cargo run --bin 04_io -p basic-projects
+   ```
+
+### ⚡ **Working with Projects**
+
+#### **Running Projects by Category**
+```bash
+# Basic projects (1-30)
+cargo run --bin <project_name> -p basic-projects
+
+# Ownership projects (31-45)
+cargo run --bin <project_name> -p ownership-projects
+
+# Web projects
+cargo run --bin <project_name> -p web-projects
+
+# Game projects
+cargo run --bin <project_name> -p game-projects
+
+# Desktop projects
+cargo run --bin <project_name> -p desktop-projects
+
+# Advanced projects (101-150)
+cargo run --bin <project_name> -p advanced-projects
+```
+
+#### **WebAssembly Projects**
+WebAssembly projects require special handling:
+```bash
+# Build WASM project
+wasm-pack build wasm-projects --target web
+
+# Serve WASM in browser
+# (requires local web server for security)
+```
+
+#### **Building Specific Workspace Members**
+```bash
+# Build only basic projects
+cargo build -p basic-projects
+
+# Build only game projects
+cargo build -p game-projects
+
+# Build all projects in workspace
+cargo build
+```
+
+### 📝 **Adding New Projects**
+
+1. **Determine the appropriate workspace member** based on project type and dependencies
+2. **Create new binary file** in the `src/bin/` directory:
+   ```bash
+   # Example: Adding project 5 (Temperature Converter)
+   touch basic-projects/src/bin/05_temperature_converter.rs
+   ```
+3. **Implement your project** in the new file
+4. **Run your project:**
+   ```bash
+   cargo run --bin 05_temperature_converter -p basic-projects
+   ```
+
+### 🔧 **Dependency Management**
+
+Each workspace member has curated dependencies for its project types:
+
+- **basic-projects**: `rand`, `chrono`, `uuid` - fundamental crates
+- **ownership-projects**: `regex` - for string processing projects
+- **web-projects**: `tokio`, `axum`, `reqwest`, `serde` - async web stack
+- **game-projects**: `bevy`, `macroquad`, `rand` - game development
+- **desktop-projects**: `iced`, `egui`, `ratatui` - GUI frameworks
+- **wasm-projects**: `wasm-bindgen`, `web-sys` - WebAssembly bindings
+- **advanced-projects**: `tokio`, `serde`, `anyhow` - system building tools
+
+**Adding dependencies:** Edit the `Cargo.toml` of the appropriate workspace member.
+
+### 🎯 **Learning Workflow**
+
+1. **Start with basic-projects** (Projects 1-30) to learn Rust syntax
+2. **Progress to ownership-projects** (Projects 31-45) for memory management concepts
+3. **Choose your path:** web, games, desktop, or advanced projects
+4. **Build incrementally** - each project builds on previous knowledge
+5. **Experiment freely** - the workspace structure encourages exploration
+
+---
+
 ## 🎮 Level 1: First Steps (Projects 1-15)
 *Getting familiar with Rust syntax and basic concepts*
 

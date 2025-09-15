@@ -1,0 +1,10 @@
+[package]
+name = "game-projects"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+# Dependencies will be uncommented as projects are implemented
+# bevy = "0.14"
+# macroquad = "0.4"
+# rand = "0.8.5"
