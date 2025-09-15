@@ -1,3 +1,4 @@
+/// Takes a name from command line arguments and prints a personalized greeting
 use std::env;
 
 fn main() {

@@ -1,3 +1,4 @@
+/// Number guessing game using rand crate, demonstrates user input, parsing, and error handling
 use rand::Rng;
 use std::cmp::Ordering;
 use std::io;
