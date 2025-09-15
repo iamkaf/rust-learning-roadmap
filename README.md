@@ -436,10 +436,10 @@ cargo install tauri-cli  # For desktop apps
 5. **Experiment** - modify projects to explore different approaches
 
 ### 🔍 **Progress Tracking**
-- [ ] Check off completed projects
-- [ ] Star particularly interesting projects for later exploration
-- [ ] Keep a learning journal of insights and challenges
-- [ ] Share your projects on GitHub for portfolio building
+- Check off completed projects
+- Star particularly interesting projects for later exploration
+- Keep a learning journal of insights and challenges
+- Share your projects on GitHub for portfolio building
 
 ---
 
@@ -504,6 +504,6 @@ This roadmap is open source and available under the MIT License.
 
 *"The journey of a thousand programs begins with a single `cargo new`"*
 
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/rust-learning-roadmap?style=social)](https://github.com/yourusername/rust-learning-roadmap)
+[![GitHub stars](https://img.shields.io/github/stars/iamkaf/rust-learning-roadmap?style=social)](https://github.com/iamkaf/rust-learning-roadmap)
 
 </div>
