@@ -241,7 +241,7 @@ Each workspace member has curated dependencies for its project types:
 
 - [x] 1. 👋 **Hello World** - Print "Hello, World!" to console
 - [x] 2. 🤝 **Personal Greeting** - Accept user input and greet them by name
-- [ ] 3. 🧮 **Simple Calculator** - Add, subtract, multiply, divide two numbers
+- [x] 3. 🧮 **Simple Calculator** - Add, subtract, multiply, divide two numbers
 - [x] 4. 🎲 **Number Guessing Game** - Generate random number, let user guess using `rand`
 - [ ] 5. 🌡️ **Temperature Converter** - Convert between Celsius and Fahrenheit
 - [ ] 6. 🎂 **Age Calculator** - Calculate age in years, months, days from birthdate
