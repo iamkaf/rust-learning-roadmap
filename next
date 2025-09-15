@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Wrapper script for next-project tool
+
+# Change to script directory (where the workspace root is)
+cd "$(dirname "$0")"
+
+# Run the next-project tool with all passed arguments
+exec cargo run --bin next-project -p tools -- "$@"

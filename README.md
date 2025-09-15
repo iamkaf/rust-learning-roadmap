@@ -138,19 +138,79 @@ cargo build -p game-projects
 cargo build
 ```
 
+### 🛠️ **Utility Tools**
+
+This roadmap includes powerful utility tools to enhance your learning experience:
+
+#### **Next Project Tool** 🎯
+Find your next uncompleted project instantly:
+
+```bash
+# Find the next uncompleted project
+./next
+
+# Show all uncompleted projects
+./next --all
+
+# Find projects from specific level (1-10)
+./next --level 3
+
+# Find projects in specific workspace
+./next --workspace basic-projects
+
+# Using cargo alias
+cargo next --level 5
+```
+
+#### **Code Search Tool** 🔍
+Search across all workspace members with powerful filtering:
+
+```bash
+# Basic search
+./search "tokio"
+
+# Search with context
+./search "struct" -C 3
+
+# Built-in shortcuts
+./search --structs     # Find all struct definitions
+./search --functions   # Find all function definitions
+./search --traits      # Find all trait definitions
+./search --enums       # Find all enum definitions
+
+# Search in specific workspace
+./search "main" -w basic-projects
+
+# Case insensitive search
+./search "Hello" -i
+
+# Count matches only
+./search "fn" --count
+
+# Using cargo alias
+cargo find --functions -C 2
+```
+
+#### **Cross-Platform Support**
+- **Unix/Linux/macOS**: Use `./next` and `./search`
+- **Windows**: Use `next.cmd` and `search.cmd`
+- **Cargo Aliases**: Use `cargo next` and `cargo find` on any platform
+
 ### 📝 **Adding New Projects**
 
-1. **Determine the appropriate workspace member** based on project type and dependencies
-2. **Create new binary file** in the `src/bin/` directory:
+1. **Find your next project** using `./next` or `cargo next`
+2. **Determine the appropriate workspace member** based on project type and dependencies
+3. **Create new binary file** in the `src/bin/` directory:
    ```bash
    # Example: Adding project 5 (Temperature Converter)
    touch basic-projects/src/bin/05_temperature_converter.rs
    ```
-3. **Implement your project** in the new file
-4. **Run your project:**
+4. **Implement your project** in the new file
+5. **Run your project:**
    ```bash
    cargo run --bin 05_temperature_converter -p basic-projects
    ```
+6. **Search for examples** using `./search` if you need reference code
 
 ### 🔧 **Dependency Management**
 

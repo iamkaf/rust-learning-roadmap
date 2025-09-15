@@ -7,7 +7,8 @@ members = [
     "game-projects",
     "desktop-projects",
     "wasm-projects",
-    "advanced-projects"
+    "advanced-projects",
+    "tools"
 ]
 
 [workspace.package]

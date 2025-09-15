@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Wrapper script for search-code tool
+
+# Change to script directory (where the workspace root is)
+cd "$(dirname "$0")"
+
+# Run the search-code tool with all passed arguments
+exec cargo run --bin search-code -p tools -- "$@"
