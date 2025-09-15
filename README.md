@@ -23,14 +23,17 @@ This roadmap takes you from complete Rust beginner to advanced systems programme
 
 ## 📚 Learning Path Overview
 
-### 🌱 **Beginner** (Projects 1-45)
-Master Rust fundamentals, ownership, and basic data structures
+### 🌱 **Beginner** (Projects 1-30)
+Master Rust syntax, control flow, and basic collections (Vec, HashMap)
 
-### 🔨 **Intermediate** (Projects 46-100) 
-Learn traits, generics, error handling, and start building real applications
+### 🔨 **Intermediate Part 1** (Projects 31-65)
+Learn ownership, borrowing, lifetimes, and custom types (structs, enums)
+
+### ⚡ **Intermediate Part 2** (Projects 66-100)
+Master traits, generics, error handling, and build real applications
 
 ### 🚀 **Advanced** (Projects 101-150)
-Systems programming, concurrency, async, and complex real-world projects
+Systems programming, concurrency, async, graphics, and masterpiece projects
 
 ---
 
@@ -90,7 +93,7 @@ Systems programming, concurrency, async, and complex real-world projects
 ---
 
 ## 🔐 Level 3: Ownership & Borrowing (Projects 31-45)
-*Understanding Rust's unique memory management concepts*
+*Mastering Rust's hardest concepts: ownership, borrowing, and lifetimes - the steep learning curve!*
 
 - [ ] 31. 🔒 **String Ownership Demo** - Demonstrate move semantics with strings
 - [ ] 32. 🔗 **Reference Counter** - Count references to data without clones
@@ -118,7 +121,7 @@ Systems programming, concurrency, async, and complex real-world projects
 ---
 
 ## 🏗️ Level 4: Structs & Enums (Projects 46-65)
-*Building custom data types and pattern matching*
+*Building custom data types and pattern matching (includes some advanced preview projects)*
 
 - [ ] 46. 🎓 **Student Record System** - Struct with methods for student data
 - [ ] 47. 📐 **Point and Rectangle** - Geometric structs with area calculations
@@ -135,8 +138,8 @@ Systems programming, concurrency, async, and complex real-world projects
 - [ ] 58. 📁 **File Path Utilities** - Work with file paths using enums
 - [ ] 59. 🌐 **HTTP Status Codes** - Enum-based HTTP status code handler
 - [ ] 60. ⌨️ **Command Line Parser** - Parse command line arguments using `clap`
-- [ ] 61. 🌍 **Simple WASM Module** - Basic Rust to WebAssembly compilation using `wasm-pack`
-- [ ] 62. 🎮 **Basic Godot Node** - Simple Rust node for Godot using `gdnative`
+- [ ] 61. 🌍 **Simple WASM Module** - Basic Rust to WebAssembly compilation using `wasm-pack` ⚠️ *Advanced Preview*
+- [ ] 62. 🎮 **Basic Godot Node** - Simple Rust node for Godot using `gdnative` ⚠️ *Advanced Preview*
 - [ ] 63. 🆔 **UUID Generator** - Generate and validate UUIDs using `uuid`
 - [ ] 64. 📅 **Date Time Handler** - Date/time operations using `chrono`
 - [ ] 65. 🎨 **Image Metadata Reader** - Read image file metadata using `image`
@@ -152,7 +155,7 @@ Systems programming, concurrency, async, and complex real-world projects
 ---
 
 ## 🎭 Level 5: Traits & Generics (Projects 66-85)
-*Code reuse and abstraction with traits and generics*
+*Code reuse and abstraction with traits and generics (includes advanced preview projects)*
 
 - [ ] 66. 🖨️ **Custom Display Trait** - Implement Display for custom types
 - [ ] 67. 📦 **Generic Container** - Generic struct that works with any type
@@ -169,9 +172,9 @@ Systems programming, concurrency, async, and complex real-world projects
 - [ ] 78. 🏗️ **Generic Builder Pattern** - Type-safe builder using generics
 - [ ] 79. ✅ **Constraint-Based Validation** - Generic validation with trait bounds using `validator`
 - [ ] 80. 🔗 **Multi-Trait Bounds** - Functions requiring multiple trait implementations
-- [ ] 81. 🔌 **Simple WebSocket Client** - Connect to WebSocket servers using `tokio-tungstenite`
-- [ ] 82. 🌍 **Interactive WASM App** - Web app with Rust WASM using `wasm-bindgen`
-- [ ] 83. 🎮 **Godot Game Logic** - Implement game mechanics in Rust for Godot
+- [ ] 81. 🔌 **Simple WebSocket Client** - Connect to WebSocket servers using `tokio-tungstenite` ⚠️ *Advanced Preview*
+- [ ] 82. 🌍 **Interactive WASM App** - Web app with Rust WASM using `wasm-bindgen` ⚠️ *Advanced Preview*
+- [ ] 83. 🎮 **Godot Game Logic** - Implement game mechanics in Rust for Godot ⚠️ *Advanced Preview*
 - [ ] 84. 📈 **Data Processing Pipeline** - Generic data transformation pipeline
 - [ ] 85. 🧪 **Generic Testing Framework** - Build your own testing utilities
 
@@ -451,32 +454,33 @@ cargo install tauri-cli  # For desktop apps
 - Pattern matching fundamentals
 
 ### **Projects 31-65**: Ownership & Custom Types
-- Ownership, borrowing, lifetimes
-- Structs, enums, pattern matching
-- Early WebAssembly and game development
+- Ownership, borrowing, lifetimes (Rust's hardest concepts!)
+- Structs, enums, advanced pattern matching
+- Some early advanced previews (WASM, Godot) - challenging!
 
 ### **Projects 66-100**: Abstractions & Error Handling
 - Traits, generics, trait objects
 - Robust error handling patterns
-- Real-world library usage
+- Real-world library usage and production patterns
 
-### **Projects 101-125**: Systems Programming
+### **Projects 101-125**: Advanced Data Structures & Concurrency
 - Advanced algorithms and data structures
-- Concurrency and async programming
+- Concurrency and async programming with Tokio
 - Database and network programming
 
-### **Projects 126-150**: Advanced Applications
-- GUI and graphics programming
-- Complex system design
-- Performance optimization
+### **Projects 126-150**: Complex Applications & Graphics
+- GUI and graphics programming (Bevy, Iced, Tauri)
+- Complex system design and architecture
+- Performance optimization and masterpiece projects
 
 ---
 
 ## 🎉 Completion Rewards
 
-**🥉 Bronze (Projects 1-50)**: Rust Fundamentals Master
-**🥈 Silver (Projects 1-100)**: Intermediate Rust Developer  
-**🥇 Gold (Projects 1-150)**: Advanced Rust Systems Programmer
+**🥉 Bronze (Projects 1-30)**: Rust Syntax Master
+**🥈 Silver (Projects 1-65)**: Rust Ownership Master
+**🥇 Gold (Projects 1-100)**: Complete Rust Developer
+**💎 Platinum (Projects 1-150)**: Rust Systems Architect
 
 ---
 
