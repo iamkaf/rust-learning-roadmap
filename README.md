@@ -54,7 +54,7 @@ Systems programming, concurrency, async, graphics, and masterpiece projects
 - [ ] 12. 📅 **Calendar Display** - Display calendar for any month/year
 - [ ] 13. 🎵 **Music Note Frequency** - Calculate musical note frequencies
 - [ ] 14. 💎 **Diamond Pattern** - Print diamond patterns with asterisks
-- [ ] 15. 🧪 **Chemistry Helper** - Periodic table element lookup
+- [ ] 15. 🧪 **Chemistry Reference CLI** - Interactive periodic table lookup with element properties, atomic weights, and electron configurations
 
 ### 🎮 Bonus Game Projects:
 - [ ] 📖 **Text Adventure Intro** - Simple "You are in a room" with basic choices
@@ -72,16 +72,16 @@ Systems programming, concurrency, async, graphics, and masterpiece projects
 - [ ] 18. 🔍 **Prime Number Checker** - Check if a number is prime
 - [ ] 19. ❗ **Factorial Calculator** - Calculate factorial recursively and iteratively
 - [ ] 20. 🔄 **Palindrome Checker** - Check if word/phrase reads same forwards/backwards
-- [ ] 21. 📝 **Word Counter** - Count words, characters, lines in text
+- [ ] 21. 📝 **Text Analysis Tool** - Analyze text files or user input for word count, character count, reading time, and most frequent words
 - [ ] 22. 🔢 **Number Base Converter** - Convert between decimal, binary, octal, hex
 - [ ] 23. 🔐 **Simple Password Generator** - Generate random passwords with criteria using `rand`
 - [ ] 24. ✂️ **Rock Paper Scissors** - Play against computer with score tracking
 - [ ] 25. ✖️ **Multiplication Table** - Generate and display multiplication tables
 - [ ] 26. 📅 **Leap Year Checker** - Determine if year is leap year
-- [ ] 27. 🎨 **ASCII Art Generator** - Convert text to ASCII art patterns
+- [ ] 27. 🎨 **Banner Text Generator** - Convert text to ASCII art banners with different fonts (block, slanted, small) for terminal displays
 - [ ] 28. 🕵️ **Simple Cipher** - Implement Caesar cipher encryption/decryption
 - [ ] 29. 📚 **Grade Calculator** - Calculate letter grades from numerical scores
-- [ ] 30. 🏆 **Sports Score Tracker** - Track wins/losses for sports teams
+- [ ] 30. 🏆 **League Management System** - Track team records, calculate standings, and generate season statistics for a sports league
 
 ### 🎮 Bonus Game Projects:
 - [ ] 🪓 **Hangman** - Classic word guessing game with Vec<char> for letters
@@ -95,20 +95,20 @@ Systems programming, concurrency, async, graphics, and masterpiece projects
 ## 🔐 Level 3: Ownership & Borrowing (Projects 31-45)
 *Mastering Rust's hardest concepts: ownership, borrowing, and lifetimes - the steep learning curve!*
 
-- [ ] 31. 🔒 **String Ownership Demo** - Demonstrate move semantics with strings
-- [ ] 32. 🔗 **Reference Counter** - Count references to data without clones
-- [ ] 33. 🎛️ **Mutable Reference Manager** - Practice mutable borrowing rules
+- [ ] 31. 🔒 **File Organizer CLI** - Move files between directories while tracking path ownership and learning move semantics
+- [ ] 32. 🔗 **Shared Document System** - Track multiple readers accessing document content using reference counting without cloning large text
+- [ ] 33. 🎛️ **Resource Lock Manager** - Manage exclusive access to system resources (files, network ports) demonstrating mutable borrowing rules
 - [ ] 34. 📦 **Vector Operations** - Implement custom vector manipulation functions
-- [ ] 35. ✂️ **String Slicer** - Work with string slices and substrings
+- [ ] 35. ✂️ **Log Parser Tool** - Extract specific fields from log files using string slices without copying, handle malformed entries
 - [ ] 36. 📚 **Memory-Safe Stack** - Implement stack with proper ownership
-- [ ] 37. ✅ **Borrowing Validator** - Demonstrate borrowing checker rules
-- [ ] 38. 🔄 **Clone vs Move Demo** - Show difference between clone and move
-- [ ] 39. ⏰ **Lifetime Demonstration** - Basic lifetime annotation examples
-- [ ] 40. 🧮 **Reference Counting Smart Pointer** - Use Rc<T> for shared ownership
-- [ ] 41. 🏠 **Interior Mutability** - Use RefCell for runtime borrow checking
-- [ ] 42. 🔗 **Weak References** - Implement weak references to break cycles
-- [ ] 43. 📦 **Box Smart Pointer** - Use Box for heap allocation
-- [ ] 44. 🧹 **Custom Drop Implementation** - Implement Drop trait for cleanup
+- [ ] 37. ✅ **Database Connection Pool** - Implement connection borrowing system that enforces single-writer/multiple-reader access patterns
+- [ ] 38. 🔄 **Data Pipeline Optimizer** - Build data processing chain that chooses between cloning and moving based on usage patterns for performance
+- [ ] 39. ⏰ **String Reference Cache** - Build caching system where string references must outlive the cache, demonstrating lifetime annotations
+- [ ] 40. 🧮 **DOM Tree Builder** - Create HTML DOM tree where nodes share ownership of child elements using Rc<T> for multiple parent references
+- [ ] 41. 🏠 **Configuration Manager** - Global app config that can be modified through immutable references using RefCell for thread-safe updates
+- [ ] 42. 🔗 **Parent-Child Node System** - Build tree structure where children hold weak references to parents to prevent memory leaks in cyclic graphs
+- [ ] 43. 📦 **Dynamic Data Structures** - Implement linked list and binary tree using Box<T> for heap-allocated recursive structures
+- [ ] 44. 🧹 **Resource Manager** - File handle manager that automatically closes files and cleans up temporary directories using custom Drop trait
 - [ ] 45. 🚀 **Zero-Copy String Parser** - Parse strings without allocating using `regex`
 
 ### 🎮 Bonus Game Projects:
@@ -125,17 +125,17 @@ Systems programming, concurrency, async, graphics, and masterpiece projects
 
 - [ ] 46. 🎓 **Student Record System** - Struct with methods for student data
 - [ ] 47. 📐 **Point and Rectangle** - Geometric structs with area calculations
-- [ ] 48. 🔄 **Enum-Based State Machine** - Model states with enums and transitions
-- [ ] 49. ❓ **Option and Result Practice** - Handle None/Some and Ok/Err cases
-- [ ] 50. 🎯 **Pattern Matching Demo** - Comprehensive match statement examples
+- [ ] 48. 🔄 **Traffic Light Controller** - Simulate traffic light system with states (Red, Yellow, Green) and time-based transitions using enums
+- [ ] 49. ❓ **Configuration File Reader** - Parse config files handling missing values (Option) and parse errors (Result) with user-friendly messages
+- [ ] 50. 🎯 **Command Router** - Parse and route different command types (file operations, network requests, system calls) using comprehensive pattern matching
 - [ ] 51. 🏦 **Bank Account Simulator** - Account struct with deposit/withdraw methods
 - [ ] 52. 🌈 **Color RGB System** - RGB color struct with conversion methods
 - [ ] 53. 🃏 **Playing Card Deck** - Card and Deck structs with shuffle/deal using `rand`
-- [ ] 54. 👥 **Employee Management** - Employee struct with different job types
+- [ ] 54. 👥 **HR Payroll System** - Employee database with different job types (hourly, salaried, contractor) and calculate pay based on employment type
 - [ ] 55. 🔺 **Geometric Shapes** - Trait for area calculation on different shapes
 - [ ] 56. 📄 **JSON-like Data Structure** - Recursive enum for JSON representation using `serde_json`
 - [ ] 57. 🧮 **Expression Evaluator** - Parse and evaluate mathematical expressions
-- [ ] 58. 📁 **File Path Utilities** - Work with file paths using enums
+- [ ] 58. 📁 **Cross-Platform Path Manager** - Handle different path types (Windows, Unix, URLs) and operations (join, normalize, validate) using enums
 - [ ] 59. 🌐 **HTTP Status Codes** - Enum-based HTTP status code handler
 - [ ] 60. ⌨️ **Command Line Parser** - Parse command line arguments using `clap`
 - [ ] 61. 🌍 **Simple WASM Module** - Basic Rust to WebAssembly compilation using `wasm-pack` ⚠️ *Advanced Preview*
@@ -158,25 +158,25 @@ Systems programming, concurrency, async, graphics, and masterpiece projects
 *Code reuse and abstraction with traits and generics (includes advanced preview projects)*
 
 - [ ] 66. 🖨️ **Custom Display Trait** - Implement Display for custom types
-- [ ] 67. 📦 **Generic Container** - Generic struct that works with any type
+- [ ] 67. 📦 **RPG Inventory System** - Generic container for game items (weapons, armor, consumables) with type-safe storage and retrieval
 - [ ] 68. 🔄 **Sortable Collection** - Generic sorting with trait bounds
-- [ ] 69. ⏭️ **Iterator Implementation** - Custom iterator for your data structure
+- [ ] 69. ⏭️ **Spreadsheet Cell Iterator** - Custom iterator that walks through spreadsheet cells with filtering (skip empty, by column, by value range)
 - [ ] 70. 💾 **Serialization Trait** - Convert structs to/from string using `serde`
-- [ ] 71. ➕ **Generic Math Operations** - Generic functions for mathematical operations
-- [ ] 72. 🎭 **Trait Object Practice** - Use trait objects for dynamic dispatch
-- [ ] 73. 🔗 **Associated Types Demo** - Implement traits with associated types
+- [ ] 71. ➕ **Scientific Calculator Engine** - Generic math operations (add, multiply, power) that work with integers, floats, and complex numbers
+- [ ] 72. 🎭 **Media Player System** - Audio/video player that handles different formats (MP3, WAV, MP4) using trait objects for format-specific decoders
+- [ ] 73. 🔗 **Database Query Builder** - Build SQL queries where each database type (PostgreSQL, MySQL, SQLite) has associated result and error types
 - [ ] 74. 📦 **Generic Result Wrapper** - Generic error handling wrapper
-- [ ] 75. 🔌 **Plugin System** - Trait-based plugin architecture
+- [ ] 75. 🔌 **Text Editor Plugin System** - Extensible text editor where features (syntax highlighting, autocomplete, linting) are trait-based plugins
 - [ ] 76. 🗃️ **Generic Cache** - LRU cache that works with any key/value types
 - [ ] 77. 👁️ **Visitor Pattern** - Implement visitor pattern with traits
-- [ ] 78. 🏗️ **Generic Builder Pattern** - Type-safe builder using generics
+- [ ] 78. 🏗️ **HTTP Request Builder** - Fluent API for building HTTP requests with compile-time validation of required fields (URL, method, headers)
 - [ ] 79. ✅ **Constraint-Based Validation** - Generic validation with trait bounds using `validator`
-- [ ] 80. 🔗 **Multi-Trait Bounds** - Functions requiring multiple trait implementations
+- [ ] 80. 🔗 **Serializable Cache System** - Generic cache where items must be Clone + Serialize + Hash, demonstrating multiple trait bounds
 - [ ] 81. 🔌 **Simple WebSocket Client** - Connect to WebSocket servers using `tokio-tungstenite` ⚠️ *Advanced Preview*
 - [ ] 82. 🌍 **Interactive WASM App** - Web app with Rust WASM using `wasm-bindgen` ⚠️ *Advanced Preview*
 - [ ] 83. 🎮 **Godot Game Logic** - Implement game mechanics in Rust for Godot ⚠️ *Advanced Preview*
-- [ ] 84. 📈 **Data Processing Pipeline** - Generic data transformation pipeline
-- [ ] 85. 🧪 **Generic Testing Framework** - Build your own testing utilities
+- [ ] 84. 📈 **ETL Data Pipeline** - Extract data from CSV, transform with validation and mapping, load into different formats (JSON, database, Excel)
+- [ ] 85. 🧪 **Property-Based Test Framework** - Testing library that generates random test data for any type implementing testable traits (like QuickCheck)
 
 ### 🎮 Bonus Game Projects:
 - [ ] 🎮 **Generic Game Engine** - Trait-based system for different game types
@@ -192,14 +192,14 @@ Systems programming, concurrency, async, graphics, and masterpiece projects
 *Robust error handling and the ? operator*
 
 - [ ] 86. ❌ **Custom Error Types** - Define domain-specific error enums using `thiserror`
-- [ ] 87. ⬆️ **Error Propagation** - Use ? operator for clean error handling
+- [ ] 87. ⬆️ **Multi-Step File Processor** - Chain file operations (read, parse, validate, write) using ? operator to propagate errors cleanly
 - [ ] 88. 📁 **File Reader with Errors** - Read files with comprehensive error handling
 - [ ] 89. 🌐 **Network Request Handler** - Handle various network error conditions using `reqwest`
 - [ ] 90. ✅ **Input Validator** - Validate user input with detailed error messages
-- [ ] 91. 🔄 **Error Recovery System** - Attempt recovery from different error types
+- [ ] 91. 🔄 **Resilient Web Scraper** - Web scraper that recovers from different errors (timeouts, 404s, rate limits) with retry strategies and fallbacks
 - [ ] 92. 🔗 **Result Combinator Chain** - Chain operations with Result combinators
 - [ ] 93. 📝 **Error Context Provider** - Add context to errors using `anyhow`
-- [ ] 94. ⚠️ **Fallible Iterator** - Iterator that can fail during iteration
+- [ ] 94. ⚠️ **Streaming File Parser** - Iterator that parses large CSV files line-by-line, handling malformed data and I/O errors gracefully
 - [ ] 95. 📊 **Error Logging System** - Log different error levels with context using `tracing`
 - [ ] 96. 🔌 **WebSocket Error Handling** - Robust WebSocket client with reconnection logic
 - [ ] 97. 🌍 **WASM Error Boundaries** - Error handling in WebAssembly applications
