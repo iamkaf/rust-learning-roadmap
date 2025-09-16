@@ -5,6 +5,7 @@ use std::io;
 
 fn main() {
     let secret_number = rand::thread_rng().gen_range(1..=100);
+    let mut guesses: Vec<u32> = Vec::new();
 
     loop {
         let mut guess = String::new();
@@ -26,11 +27,14 @@ fn main() {
             Err(_) => continue,
         };
 
+        guesses.push(guess);
+
         match guess.cmp(&secret_number) {
             Ordering::Less => println!("Too low!"),
             Ordering::Greater => println!("Too high!"),
             Ordering::Equal => {
                 println!("The secret number is {secret_number}.");
+                println!("Your guesses: {guesses:?}");
                 println!("You win!!!");
                 break;
             }
