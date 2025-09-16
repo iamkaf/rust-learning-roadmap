@@ -48,6 +48,10 @@ cargo run --bin 01_hello_world -p basic-projects
 
 # Find your next project
 ./next
+# Bootstrap the file
+./create
+# Track your progress
+./progress
 ```
 
 > 📖 **For detailed setup, commands, and workflow →** See [CLAUDE.md](CLAUDE.md)
@@ -495,8 +499,11 @@ cargo install tauri-cli  # For desktop apps
 ## 🎉 Completion Rewards
 
 **🥉 Bronze (Projects 1-30)**: Rust Syntax Master
+
 **🥈 Silver (Projects 1-65)**: Rust Ownership Master
+
 **🥇 Gold (Projects 1-100)**: Complete Rust Developer
+
 **💎 Platinum (Projects 1-150)**: Rust Systems Architect
 
 ---
