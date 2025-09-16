@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Wrapper script for progress-tracker tool (Unix/Linux/macOS)
+
+# Get the directory where this script is located (workspace root)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Change to script directory and run the progress-tracker tool
+cd "$SCRIPT_DIR"
+exec cargo run --bin progress-tracker -p tools -- "$@"

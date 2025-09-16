@@ -143,12 +143,31 @@ pub fn is_project_implemented(project: &Project) -> Result<bool> {
     };
 
     let root = get_workspace_root()?;
-    let filename = get_project_filename(project.number, &project.title);
-    let file_path = root
+    let bin_dir = root
         .join(workspace_member)
         .join("src")
-        .join("bin")
-        .join(&filename);
+        .join("bin");
 
-    Ok(file_path.exists())
+    // Try exact filename match first
+    let expected_filename = get_project_filename(project.number, &project.title);
+    let exact_path = bin_dir.join(&expected_filename);
+    if exact_path.exists() {
+        return Ok(true);
+    }
+
+    // Try pattern matching for existing files with same project number
+    let project_prefix = format!("{:02}_", project.number);
+
+    if bin_dir.exists() {
+        for entry in std::fs::read_dir(&bin_dir)? {
+            let entry = entry?;
+            if let Some(filename) = entry.file_name().to_str() {
+                if filename.starts_with(&project_prefix) && filename.ends_with(".rs") {
+                    return Ok(true);
+                }
+            }
+        }
+    }
+
+    Ok(false)
 }

@@ -3,3 +3,4 @@
 next = "run --bin next-project -p tools --"
 find = "run --bin search-code -p tools --"
 create = "run --bin create-project -p tools --"
+progress = "run --bin progress-tracker -p tools --"
