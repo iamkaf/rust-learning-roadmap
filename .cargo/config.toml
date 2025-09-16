@@ -2,3 +2,4 @@
 # Convenience aliases for the utility tools
 next = "run --bin next-project -p tools --"
 find = "run --bin search-code -p tools --"
+create = "run --bin create-project -p tools --"

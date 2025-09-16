@@ -6,85 +6,235 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a comprehensive Rust learning roadmap with 150 projects organized in a Cargo workspace. The repository teaches Rust through hands-on projects progressing from basic syntax to advanced systems programming.
 
-## Architecture & Structure
+## 🏗️ Workspace Structure & Usage Guide
 
-The codebase is organized as a **Cargo workspace** with specialized workspace members:
+This repository is organized as a **Cargo workspace** to accommodate the diverse project types and dependencies across all 150 projects. Each category has its own workspace member with appropriate dependencies.
 
-- **basic-projects/**: Projects 1-30 (beginner syntax and control flow)
-- **ownership-projects/**: Projects 31-45 (ownership, borrowing, lifetimes)
-- **web-projects/**: Web and async projects (tokio, axum, reqwest)
-- **game-projects/**: Game development (bevy, macroquad, rand)
-- **desktop-projects/**: GUI applications (iced, egui, ratatui)
-- **wasm-projects/**: WebAssembly projects (wasm-bindgen, web-sys)
-- **advanced-projects/**: Complex systems (Projects 101-150)
-- **tools/**: Utility tools for finding next projects and code searching
-- **experiments/**: Personal experimentation and self-study projects
+### 📁 **Project Organization**
 
-Each workspace member has its own `Cargo.toml` with curated dependencies appropriate for its project types.
-
-## Development Commands
-
-### Building Projects
-```bash
-# Build entire workspace
-cargo build
-
-# Build specific workspace member
-cargo build -p basic-projects
-cargo build -p game-projects
-
-# Check workspace
-cargo check
+```
+rust-learning-roadmap/
+├── Cargo.toml                    # Workspace root
+├── README.md
+├── basic-projects/               # Projects 1-30 (Beginner)
+│   ├── Cargo.toml               # Dependencies: rand, chrono, etc.
+│   └── src/bin/                 # Individual project files
+├── ownership-projects/           # Projects 31-45 (Ownership & Borrowing)
+│   ├── Cargo.toml               # Dependencies: regex
+│   └── src/bin/
+├── web-projects/                # Web & Async Projects
+│   ├── Cargo.toml               # Dependencies: tokio, axum, reqwest
+│   └── src/bin/
+├── game-projects/               # Game Development Projects
+│   ├── Cargo.toml               # Dependencies: bevy, macroquad, rand
+│   └── src/bin/
+├── desktop-projects/            # GUI & Desktop Applications
+│   ├── Cargo.toml               # Dependencies: iced, egui, ratatui
+│   └── src/bin/
+├── wasm-projects/               # WebAssembly Projects
+│   ├── Cargo.toml               # Dependencies: wasm-bindgen, web-sys
+│   └── src/lib.rs               # WebAssembly library
+└── advanced-projects/           # Complex Systems (Projects 101-150)
+    ├── Cargo.toml               # Dependencies: tokio, serde, anyhow
+    └── src/bin/
 ```
 
-### Running Projects
-Projects are located in `src/bin/` directories with naming convention `NN_project_name.rs`:
+### 🚀 **Getting Started**
 
+1. **Clone and explore the workspace:**
+   ```bash
+   git clone <repository-url>
+   cd rust-learning-roadmap
+
+   # Build entire workspace
+   cargo build
+
+   # Check workspace status
+   cargo check
+   ```
+
+2. **Run existing projects:**
+   ```bash
+   # Project 1: Hello World
+   cargo run --bin 01_hello_world -p basic-projects
+
+   # Project 4: Number Guessing Game
+   cargo run --bin 04_guessing_game -p basic-projects
+   ```
+
+### ⚡ **Working with Projects**
+
+#### **Running Projects by Category**
 ```bash
-# Run specific project
-cargo run --bin 01_hello_world -p basic-projects
-cargo run --bin 04_guessing_game -p basic-projects
-cargo run --bin <project_name> -p <workspace-member>
+# Basic projects (1-30)
+cargo run --bin <project_name> -p basic-projects
+
+# Ownership projects (31-45)
+cargo run --bin <project_name> -p ownership-projects
+
+# Web projects
+cargo run --bin <project_name> -p web-projects
+
+# Game projects
+cargo run --bin <project_name> -p game-projects
+
+# Desktop projects
+cargo run --bin <project_name> -p desktop-projects
+
+# Advanced projects (101-150)
+cargo run --bin <project_name> -p advanced-projects
 ```
 
-### WebAssembly Projects
+#### **WebAssembly Projects**
+WebAssembly projects require special handling:
 ```bash
 # Build WASM project
 wasm-pack build wasm-projects --target web
+
+# Serve WASM in browser
+# (requires local web server for security)
 ```
 
-### Utility Tools
-
-**Next Project Tool** - Find uncompleted projects:
+#### **Building Specific Workspace Members**
 ```bash
-./next                          # Find next uncompleted project
-./next --all                    # Show all uncompleted projects
-./next --level 3                # Find projects from specific level
-./next --workspace basic-projects  # Find projects in specific workspace
-cargo next --level 5            # Using cargo alias
+# Build only basic projects
+cargo build -p basic-projects
+
+# Build only game projects
+cargo build -p game-projects
+
+# Build all projects in workspace
+cargo build
 ```
 
-**Code Search Tool** - Search across workspace:
+### 🛠️ **Utility Tools**
+
+This roadmap includes powerful utility tools to enhance your learning experience:
+
+#### **Next Project Tool** 🎯
+Find your next uncompleted project instantly:
+
 ```bash
-./search "pattern"              # Basic search
-./search "struct" -C 3          # Search with context
-./search --structs              # Find struct definitions
-./search --functions            # Find function definitions
-./search --traits               # Find trait definitions
-./search --enums                # Find enum definitions
-./search "main" -w basic-projects  # Search in specific workspace
-cargo find --functions -C 2     # Using cargo alias
+# Find the next uncompleted project
+./next
+
+# Show all uncompleted projects
+./next --all
+
+# Find projects from specific level (1-10)
+./next --level 3
+
+# Find projects in specific workspace
+./next --workspace basic-projects
+
+# Using cargo alias
+cargo next --level 5
 ```
 
-## Project Creation Workflow
+#### **Code Search Tool** 🔍
+Search across all workspace members with powerful filtering:
 
-1. Use `./next` or `cargo next` to find your next project
-2. Determine the appropriate workspace member based on project type
-3. Create new binary file: `touch <workspace>/src/bin/NN_project_name.rs`
-4. Implement the project
-5. Run with: `cargo run --bin NN_project_name -p <workspace>`
+```bash
+# Basic search
+./search "tokio"
 
-## Key Dependencies by Workspace
+# Search with context
+./search "struct" -C 3
+
+# Built-in shortcuts
+./search --structs     # Find all struct definitions
+./search --functions   # Find all function definitions
+./search --traits      # Find all trait definitions
+./search --enums       # Find all enum definitions
+
+# Search in specific workspace
+./search "main" -w basic-projects
+
+# Case insensitive search
+./search "Hello" -i
+
+# Count matches only
+./search "fn" --count
+
+# Using cargo alias
+cargo find --functions -C 2
+```
+
+#### **Project Creator Tool** ✨
+Interactive project creation wizard:
+
+```bash
+# Launch interactive creator
+./create
+
+# Using cargo alias
+cargo create
+```
+
+**Interactive Flow:**
+1. Shows next recommended project
+2. Options: Create next project OR choose specific project number
+3. Generates starter template with TODO comments
+4. Provides run command for immediate testing
+
+#### **Cross-Platform Support**
+- **Unix/Linux/macOS**: Use `./next`, `./search`, and `./create`
+- **Windows**: Use `next.cmd`, `search.cmd`, and `create.cmd`
+- **Cargo Aliases**: Use `cargo next`, `cargo find`, and `cargo create` on any platform
+
+### 📝 **Adding New Projects**
+
+#### **Easy Way (Recommended):**
+```bash
+./create        # Interactive project creator
+cargo create    # Using cargo alias
+```
+
+#### **Manual Way:**
+1. **Find your next project** using `./next` or `cargo next`
+2. **Determine the appropriate workspace member** based on project type and dependencies
+3. **Create new binary file** in the `src/bin/` directory:
+   ```bash
+   # Example: Adding project 5 (Temperature Converter)
+   touch basic-projects/src/bin/05_temperature_converter.rs
+   ```
+4. **Implement your project** in the new file
+5. **Run your project:**
+   ```bash
+   cargo run --bin 05_temperature_converter -p basic-projects
+   ```
+6. **Search for examples** using `./search` if you need reference code
+
+### 🔧 **Dependency Management**
+
+Each workspace member has curated dependencies for its project types:
+
+- **basic-projects**: `rand`, `chrono`, `uuid` - fundamental crates
+- **ownership-projects**: `regex` - for string processing projects
+- **web-projects**: `tokio`, `axum`, `reqwest`, `serde` - async web stack
+- **game-projects**: `bevy`, `macroquad`, `rand` - game development
+- **desktop-projects**: `iced`, `egui`, `ratatui` - GUI frameworks
+- **wasm-projects**: `wasm-bindgen`, `web-sys` - WebAssembly bindings
+- **advanced-projects**: `tokio`, `serde`, `anyhow` - system building tools
+
+**Adding dependencies:** Edit the `Cargo.toml` of the appropriate workspace member.
+
+### 🎯 **Learning Workflow**
+
+1. **Start with basic-projects** (Projects 1-30) to learn Rust syntax
+2. **Progress to ownership-projects** (Projects 31-45) for memory management concepts
+3. **Choose your path:** web, games, desktop, or advanced projects
+4. **Build incrementally** - each project builds on previous knowledge
+5. **Experiment freely** - the workspace structure encourages exploration
+
+## Additional Workspace Members
+
+Beyond the main project workspaces, there are also:
+
+- **tools/**: Utility tools for finding next projects and code searching
+- **experiments/**: Personal experimentation and self-study projects
+
+## Key Dependencies by Workspace (Complete List)
 
 - **basic-projects**: `rand`, `chrono`, `uuid`
 - **ownership-projects**: `regex`
@@ -96,7 +246,7 @@ cargo find --functions -C 2     # Using cargo alias
 - **tools**: `clap`, `regex`, `anyhow`, `colored`, `walkdir`
 - **experiments**: `serde`, `anyhow`, `clap`, `tokio`, `reqwest`, `rand`
 
-## Workspace Management
+## Workspace Management Notes
 
 - All projects are tracked in README.md with checkboxes for completion status
 - The workspace uses Rust Edition 2024

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Wrapper script for create-project tool (Unix/Linux/macOS)
+
+# Get the directory where this script is located (workspace root)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Change to script directory and run the create-project tool
+cd "$SCRIPT_DIR"
+exec cargo run --bin create-project -p tools -- "$@"
