@@ -1,7 +1,8 @@
 use anyhow::Result;
 use clap::{Arg, Command};
 use colored::*;
-use tools::{get_project_filename, is_project_implemented, parse_projects};
+use std::fs;
+use tools::{get_project_filename, is_project_implemented, parse_projects, get_workspace_root};
 
 fn main() -> Result<()> {
     let matches = Command::new("next-project")
@@ -30,6 +31,12 @@ fn main() -> Result<()> {
                 .action(clap::ArgAction::SetTrue)
                 .help("Only show projects that have been implemented (files exist)"),
         )
+        .arg(
+            Arg::new("init")
+                .long("init")
+                .action(clap::ArgAction::SetTrue)
+                .help("Create the expected file for the next project"),
+        )
         .get_matches();
 
     let projects = parse_projects()?;
@@ -38,6 +45,26 @@ fn main() -> Result<()> {
     let workspace_filter = matches.get_one::<String>("workspace");
     let show_all = matches.get_flag("all");
     let implemented_only = matches.get_flag("implemented");
+    let init_mode = matches.get_flag("init");
+
+    // Handle --init flag
+    if init_mode {
+        let next_project = projects
+            .iter()
+            .find(|project| !project.completed && !is_project_implemented(project).unwrap_or(false));
+
+        match next_project {
+            Some(project) => {
+                println!("{}", "🎯 Creating next project file...".cyan().bold());
+                create_project_file(project)?;
+                return Ok(());
+            }
+            None => {
+                println!("{}", "🎉 All projects are completed or already have files!".green().bold());
+                return Ok(());
+            }
+        }
+    }
 
     let filtered_projects: Vec<_> = projects
         .iter()
@@ -169,4 +196,66 @@ fn get_level_name(level: u32) -> &'static str {
         10 => "Masterpiece Projects",
         _ => "Unknown Level",
     }
+}
+
+fn create_project_file(project: &tools::Project) -> Result<()> {
+    let workspace_member = match &project.workspace_member {
+        Some(member) => member,
+        None => {
+            println!("{}", "❌ Cannot determine workspace for this project".red());
+            return Ok(());
+        }
+    };
+
+    let root = get_workspace_root()?;
+    let filename = get_project_filename(project.number, &project.title);
+    let file_path = root
+        .join(workspace_member)
+        .join("src")
+        .join("bin")
+        .join(&filename);
+
+    // Check if file already exists
+    if file_path.exists() {
+        println!("{}", format!("❌ File already exists: {}", file_path.display()).red());
+        return Ok(());
+    }
+
+    // Ensure directory exists
+    if let Some(parent) = file_path.parent() {
+        fs::create_dir_all(parent)?;
+    }
+
+    // Generate starter template
+    let template = generate_template(project);
+
+    fs::write(&file_path, template)?;
+
+    println!();
+    println!("{}", "✨ Project file created successfully!".green().bold());
+    println!("{}: {}", "File".cyan(), file_path.display().to_string().white());
+    println!("{}: {}", "Run".cyan(),
+        format!("cargo run --bin {} -p {}",
+            filename.strip_suffix(".rs").unwrap(),
+            workspace_member
+        ).white()
+    );
+
+    Ok(())
+}
+
+fn generate_template(project: &tools::Project) -> String {
+    let level = get_project_level(project.number);
+    let level_name = get_level_name(level);
+
+    format!(
+        "/// Project {}: {}\n/// Level {}: {}\n/// {}\n\nfn main() {{\n    // TODO: Implement the project logic here\n    // Description: {}\n    \n    println!(\"{}\");\n}}\n",
+        project.number,
+        project.title,
+        level,
+        level_name,
+        project.description,
+        project.description,
+        project.title
+    )
 }
