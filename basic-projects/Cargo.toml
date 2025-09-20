@@ -5,3 +5,4 @@ edition.workspace = true
 
 [dependencies]
 rand = "0.8.5"
+chrono = "0.4.42"
