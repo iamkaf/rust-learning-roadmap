@@ -66,7 +66,7 @@ cargo run --bin 01_hello_world -p basic-projects
 - [x] 3. 🧮 **Simple Calculator** - Add, subtract, multiply, divide two numbers
 - [x] 4. 🎲 **Number Guessing Game** - Generate random number, let user guess using `rand`
 - [x] 5. 🌡️ **Temperature Converter** - Convert between Celsius and Fahrenheit
-- [ ] 6. 🎂 **Age Calculator** - Calculate age in years, months, days from birthdate
+- [x] 6. 🎂 **Age Calculator** - Calculate age in years, months, days from birthdate
 - [ ] 7. ⚖️ **BMI Calculator** - Calculate and categorize Body Mass Index
 - [ ] 8. 💰 **Simple Interest Calculator** - Calculate simple interest on loans
 - [ ] 9. ➕ **Quadratic Equation Solver** - Solve ax² + bx + c = 0
